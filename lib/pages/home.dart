@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-
 class Home extends StatefulWidget {
   const Home({super.key});
+
   @override
   State<Home> createState() => _HomeState();
 }
@@ -12,10 +12,17 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Text(
-          'Home Screen'
-        ),
-      ),
+          child: Column(
+        children: <Widget>[
+          TextButton.icon(
+            onPressed: () {
+              Navigator.pushNamed(context, '/location');
+            },
+            icon: Icon(Icons.edit_location),
+            label: Text('Edit location'),
+          ),
+        ],
+      )),
     );
   }
 }
